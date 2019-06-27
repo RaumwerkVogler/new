@@ -41,7 +41,8 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
+   h2, h3, h4, h5, h6 {
+    font-weight:100;
     font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
   .nav-active {

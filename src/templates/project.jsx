@@ -23,6 +23,9 @@ const Content = styled(Container)`
   img {
     text-align:left;
   }
+  h2,h3 {
+    font-weight:100;
+  }
 `
 
 const InformationWrapper = styled(animated.div)`
@@ -73,7 +76,7 @@ const Project = ({ data: { mdx: postNode }, location }) => {
         </BGImage>
         <Content type="text">
           <Title data-testid="project-title" style={titleProps}>
-            <span style={{fontWeight:100}}>{project.title}</span>
+            <h1 style={{fontWeight:100,fontSize:'1.5rem',letterSpacing:'.7rem'}}>{project.title}</h1>
           </Title>
           </Content>
       </Hero>

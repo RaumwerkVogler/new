@@ -5,7 +5,7 @@ module.exports = {
   siteHeadline: 'Spanisch essen bei LUZ de Mar in Bacharach', // Headline for schema.org JSONLD
   siteTitleShort: 'LUZ de MAR', // short_name for manifest
   siteUrl: 'https://luzdemar.netlify.com', // Domain of your site. No trailing slash!
-  siteLanguage: 'de', // Language Tag on <html> element
+  siteLanguage: 'de_De', // Language Tag on <html> element
   siteLogo: '/logo.png', // Used for SEO and manifest
   siteDescription: 'LUZ de Mar. Das spanische Restaurant in Bacharach.',
   author: 'LekoArts', // Author for schema.org JSONLD

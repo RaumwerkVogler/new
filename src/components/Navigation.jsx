@@ -124,9 +124,9 @@ const Navigation = () => {
 
       </SocialMedia>
       <Nav>
-        {data.nav.nodes.map((n, index) => (
+        {data.nav.nodes.map((n, index) =>  (
           <Link key={n.fields.slug} to={n.fields.slug} data-testid={`navItem-${index}`} activeClassName="nav-active">
-            {n.frontmatter.title}
+            {n.frontmatter.title!=="Fisch" ? n.frontmatter.title:null}
           </Link>
         ))}
       </Nav>

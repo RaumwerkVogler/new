@@ -89,16 +89,49 @@ const Service = styled.div`
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 `
 
-const ProjectItem = ({ node, style, testid }) => (
+const ProjectItem = ({ node, style, testid }) =>{
+
+  return (
   <Item key={node.fields.slug} style={style} data-testid={testid}>
     <Content>
-
+       <Link to="fisch">Fisch</Link>
       <ImageWrapper>
 
         <Img fluid={node.frontmatter.cover.childImageSharp.fluid} />
+
       </ImageWrapper>
+    <p style={{bottom:'-330px',width:'60px',marginLeft:30,color:'white',position:'relative',zIndex:2000}}>&rarr; mehr</p>
       <Link to={node.fields.slug}>
-        <p>{node.frontmatter.title}</p>
+        <h1 style={{fontWeight:400,fontSize:'1rem'}}>{node.frontmatter.title}</h1>
+        {
+           node.fields.slug ==="/speisen" ?
+           <div>
+           <p>Mediterrane Fischgerichte, Steaks, Grillspezialitäten, Tapas und mehr</p>
+           </div>
+           :
+           null
+        }
+        {
+           node.fields.slug ==="/lage" ?
+
+         <div style={{display:'flex',flexDirection:'column'}}>
+          <p> Eingang zum Restaurant auf der Stadtmauer</p>
+
+         </div>
+           :
+           null
+        }
+        {
+           node.fields.slug ==="/fleisch" ?
+
+         <div style={{display:'flex',flexDirection:'column'}}>
+          <p> Wir bereiten nur Fleisch von übderdurchschnittlicher Qualität zu.</p>
+
+         </div>
+           :
+           null
+        }
+
         <TracedGlow src={node.frontmatter.cover.childImageSharp.fluid.tracedSVG} alt="" />
         <Overlay style={{ backgroundColor: node.frontmatter.color }} />
 
@@ -106,7 +139,7 @@ const ProjectItem = ({ node, style, testid }) => (
 
     </Content>
   </Item>
-)
+)}
 
 export default ProjectItem
 

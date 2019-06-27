@@ -15,6 +15,9 @@ const Content = styled(Container)`
   padding-top: 2rem;
   padding-bottom: 2rem;
   z-index: 3;
+  h2,h3 {
+    font-weight:100;
+  }
 `
 
 const Title = styled(animated.h1)`
@@ -40,7 +43,7 @@ const Single = ({ data: { mdx }, location }) => {
         </BGImage>
         <Content type="text">
           <Title data-testid="single-title" style={titleProps}>
-            <span style={{fontWeight:100,fontSize:'1.2rem'}}>{single.title}</span>
+            <h1 style={{fontWeight:100,fontSize:'1.6rem',letterSpacing:'.7rem'}}>{single.title}</h1>
           </Title>
         </Content>
       </Hero>
