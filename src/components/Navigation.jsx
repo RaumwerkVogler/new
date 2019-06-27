@@ -124,15 +124,19 @@ const Navigation = () => {
 
       </SocialMedia>
       <Nav>
-        {data.nav.nodes.map((n, index) =>  (
-          <Link key={n.fields.slug} to={n.fields.slug} data-testid={`navItem-${index}`} activeClassName="nav-active">
-            {n.frontmatter.title!=="Fisch" ? n.frontmatter.title:null}
+
+          <Link  to="/impressum"  activeClassName="nav-active">
+             Impressum
           </Link>
-        ))}
+          <Link  to="/kontakt"  activeClassName="nav-active">Kontakt
+        </Link>
+            <Link  to="/datenschutz"  activeClassName="nav-active">Datenschutz
+          </Link>
+
       </Nav>
     </Wrapper>
-    <Inhalt><h1 style={{fontWeight:200,letterSpacing:'.61rem',fontSize:'1.4rem',margin:'20px'}}><Link to="/">LUZ de MAR <br/>
-    <span style={{fontSize:'1rem',fontWeight:100}}>Das spanische Restaurant in Bacharach</span></Link></h1></Inhalt>
+    <Inhalt><h1 style={{fontWeight:200,letterSpacing:'.61rem',fontSize:'1.4rem',margin:'20px'}}><Link style={{fontWeight:400}} to="/">LUZ de MAR <br/>
+    <span style={{fontSize:'1rem',fontWeight:400}}>Das spanische Restaurant in Bacharach</span></Link></h1></Inhalt>
     </>
   )
 }
