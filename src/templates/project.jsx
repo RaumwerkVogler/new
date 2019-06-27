@@ -23,9 +23,8 @@ const Content = styled(Container)`
   img {
     text-align:left;
   }
-  h2,h3 {
-    font-weight:100;
-  }
+
+
 `
 
 const InformationWrapper = styled(animated.div)`

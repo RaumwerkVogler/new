@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { FaInstagram,FaFacebook } from 'react-icons/fa'
+import { FaInstagram,FaFacebook,FaMapPin } from 'react-icons/fa'
 import styled from 'styled-components'
 import config from '../../config/website'
 const Inhalt = styled.div`
@@ -104,7 +104,7 @@ const Navigation = () => {
 
       <SocialMedia>
         <a
-          href="https://www.instagram.com/lekoarts.de"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -112,12 +112,21 @@ const Navigation = () => {
           <FaInstagram />
         </a>
         <a
-          href="https://www.instagram.com/lekoarts.de"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
         >
           <FaFacebook />
+        </a>
+
+        <a
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <FaMapPin />
         </a>
 
 

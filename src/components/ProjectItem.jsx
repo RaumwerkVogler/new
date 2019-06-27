@@ -93,8 +93,10 @@ const ProjectItem = ({ node, style, testid }) =>{
 
   return (
   <Item key={node.fields.slug} style={style} data-testid={testid}>
+
+  
     <Content>
-       <Link to="fisch">Fisch</Link>
+
       <ImageWrapper>
 
         <Img fluid={node.frontmatter.cover.childImageSharp.fluid} />
@@ -127,7 +129,7 @@ const ProjectItem = ({ node, style, testid }) =>{
          <div style={{display:'flex',flexDirection:'column'}}>
           <p> Dank 20jähriger Erfahrung in der Gastronmie haben wir wunderbare Cocktails kreiert.</p>
           <p> Wir bereiten aber auch Cocktails zu ganz nach Ihren Wünschen.</p>
-          <p> Probieren Sie auch unsere alkoholfreien Cocktails.</p>
+
          </div>
            :
            null
