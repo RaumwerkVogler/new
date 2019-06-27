@@ -121,7 +121,7 @@ const Navigation = () => {
         </a>
 
         <a
-          href=""
+          href="https://www.google.de/maps/place/Langstra%C3%9Fe+18,+55422+Bacharach/@50.0582422,7.7668149,17z/data=!4m5!3m4!1s0x47bde0f089117e71:0xa479b0fdbae5df3f!8m2!3d50.0582422!4d7.7690036"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
