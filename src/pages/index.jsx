@@ -14,6 +14,9 @@ const ListWrapper = styled.div`
   width: 100%;
 `
 
+
+
+
 const Index = ({
   data: {
     allMdx: { nodes: projectEdges },

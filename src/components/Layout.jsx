@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React,{useState} from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import 'typeface-merriweather'
@@ -9,7 +10,32 @@ import Footer from './Footer'
 import theme from '../../config/theme'
 import reset from '../styles/reset'
 import styled from 'styled-components'
+import DatenContext from '../context/DatenContext'
+import {Link} from 'gatsby'
 
+
+const Hinweis = styled.div`
+   display:flex;
+   flex-direction:column;
+   background-color:red;
+   padding:20px;
+   color:white;
+   a {
+     color:white;
+     font-size:1rem;
+   }
+`
+const Button = styled.button`
+  padding:10px;
+  border:none;
+  background-color:white;
+  color:black;
+  cursor:pointer;
+  width:200px;
+  font-size:1.2rem;
+  border-radius:3%;
+
+`
 const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
@@ -26,18 +52,39 @@ const GlobalStyle = createGlobalStyle`
 // We can pass customSEO here to not include the <SEO> component twice. This prop is 'true' on the project template
 // as the SEO component there passes in some additional things. Otherwise things would be inserted two times
 
-const Layout = ({ children, pathname, customSEO }) => (
+const Layout = ({ children, pathname, customSEO }) =>
+{
+ const [ein, setEin] = useState(0);
+return(
   <ThemeProvider theme={theme}>
     <>
       {!customSEO && <SEO pathname={pathname} />}
       <GlobalStyle />
       <Navigation />
-      
+      <DatenContext.Consumer>
+      {
+
+        eintrag => (
+        eintrag.ein === 0 ?
+        <Hinweis>
+          <h3>
+            Auch wir nutzen Cookies und ...
+          </h3>
+          <p>Durch Klick auf den Zustimmungsbutton erkennen ich Ihre Datenschutzbestimmungen an.</p>
+          <Button onClick={eintrag.toggleEinverstanden}> &rarr; zustimmen</Button>
+          <p><Link to="/datenschutz">
+          &rarr; Datenschutzbestimmungen lesen</Link></p>
+
+        </Hinweis>:null
+        )
+       }
+      </DatenContext.Consumer>
+
       {children}
       <Footer />
     </>
   </ThemeProvider>
-)
+)}
 
 export default Layout
 

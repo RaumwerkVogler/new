@@ -14,10 +14,9 @@ const Wrapper = styled.footer`
 
 const Footer = () => (
   <Wrapper data-testid="footer">
-    Copyright &copy; 2019. All right reserved.<br/> Pictures by Rene Broich.{' '}
     Website made by Rene Broich. Bacharach.<br/>
     Kontakt: renbroi@icloud.com <br/>
-  
+
   </Wrapper>
 )
 
