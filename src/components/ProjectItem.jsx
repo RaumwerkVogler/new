@@ -100,13 +100,13 @@ const ProjectItem = ({ node, style, testid }) =>{
         <Img fluid={node.frontmatter.cover.childImageSharp.fluid} />
 
       </ImageWrapper>
-    <p style={{bottom:'-330px',width:'60px',marginLeft:30,color:'white',position:'relative',zIndex:2000}}>&rarr; mehr</p>
       <Link to={node.fields.slug}>
         <h1 style={{fontWeight:400,fontSize:'1rem'}}>{node.frontmatter.title}</h1>
         {
            node.fields.slug ==="/speisen" ?
            <div>
-           <p>Mediterrane Fischgerichte, Steaks, Grillspezialitäten, Tapas und mehr</p>
+           <p>Mediterrane Fischgerichte, Steaks, Grillspezialitäten, Tapas und mehr ...</p>
+           <p>Immer frisch zubereitet nach original spanischen Rezepten.</p>
            </div>
            :
            null
@@ -122,10 +122,32 @@ const ProjectItem = ({ node, style, testid }) =>{
            null
         }
         {
+           node.fields.slug ==="/cocktails" ?
+
+         <div style={{display:'flex',flexDirection:'column'}}>
+          <p> Dank 20jähriger Erfahrung in der Gastronmie haben wir wunderbare Cocktails kreiert.</p>
+          <p> Wir bereiten aber auch Cocktails zu ganz nach Ihren Wünschen.</p>
+          <p> Probieren Sie auch unsere alkoholfreien Cocktails.</p>
+         </div>
+           :
+           null
+        }
+        {
            node.fields.slug ==="/fleisch" ?
 
          <div style={{display:'flex',flexDirection:'column'}}>
           <p> Wir bereiten nur Fleisch von übderdurchschnittlicher Qualität zu.</p>
+
+         </div>
+           :
+           null
+        }
+        {
+           node.fields.slug ==="/wir" ?
+
+         <div style={{display:'flex',flexDirection:'column'}}>
+          <p> Seit diesem Jahr haben wir unser Restaurant in Bacharach eröffnet.</p>
+          <p> Wir bemühen uns, allen Ansprüchen unserer Kunden gerecht zu werden.</p>
 
          </div>
            :
