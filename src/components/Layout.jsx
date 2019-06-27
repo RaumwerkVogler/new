@@ -33,7 +33,7 @@ const Button = styled.button`
   cursor:pointer;
   width:200px;
   font-size:1.2rem;
-  border-radius:3%;
+  border-radius:6%;
 
 `
 const GlobalStyle = createGlobalStyle`
@@ -70,7 +70,7 @@ return(
           <h3>
             Auch wir nutzen Cookies und ...
           </h3>
-          <p>Durch Klick auf den Zustimmungsbutton erkennen ich Ihre Datenschutzbestimmungen an.</p>
+          <p>Durch Klick auf den Zustimmungsbutton erkenne ich Ihre Datenschutzbestimmungen an.</p>
           <Button onClick={eintrag.toggleEinverstanden}> &rarr; zustimmen</Button>
           <p><Link to="/datenschutz">
           &rarr; Datenschutzbestimmungen lesen</Link></p>
