@@ -166,7 +166,32 @@ const ProjectItem = ({ node, style, testid }) =>{
          <div style={{display:'flex',flexDirection:'column'}}>
 
           <p> Restaurantkritik verfassen?<br/>Nach Prüfung auf abwegige (nicht kritische) Inhalte wird diese publiziert.</p>
+
+
+
+         </div>
+           :
+           null
+        }
+        {
+           node.fields.slug ==="/tisch" ?
+
+         <div style={{display:'flex',flexDirection:'column'}}>
+
+          <p>Gerne reservieren wir für Sie einen Tisch. Bitte dafür alle notwendigen Daten eingeben </p>
           
+
+         </div>
+           :
+           null
+        }
+        {
+           node.fields.slug ==="/veranstaltung" ?
+
+         <div style={{display:'flex',flexDirection:'column'}}>
+
+          <p>Gegen die nachsommerliche Depressionswelle kämpfen wir
+          mit einigen Veranstaltungen </p>
 
 
          </div>
