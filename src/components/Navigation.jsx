@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { FaInstagram,FaFacebook,FaMapPin } from 'react-icons/fa'
+import { FaHome,FaInstagram,FaFacebook,FaMapPin } from 'react-icons/fa'
 import styled from 'styled-components'
 import config from '../../config/website'
 const Inhalt = styled.div`
@@ -45,9 +45,19 @@ const Nav = styled.nav`
   }
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     padding: 0 1rem;
+    flex-direction:column;
+    a {
+      margin-left: 1rem;
+
+    }
   }
   @media (max-width: ${props => props.theme.breakpoints.xs}) {
     order: 2;
+    flex-direction:column;
+    a {
+      margin-left: 1rem;
+
+    }
   }
 `
 
@@ -100,6 +110,8 @@ const Navigation = () => {
   return (
     <>
     <Wrapper data-testid="navigation">
+
+     <Link style={{fontSize:'1.3rem',marginLeft:20}} to="/"><FaHome /></Link>
 
 
       <SocialMedia>

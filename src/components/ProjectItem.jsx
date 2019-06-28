@@ -94,7 +94,7 @@ const ProjectItem = ({ node, style, testid }) =>{
   return (
   <Item key={node.fields.slug} style={style} data-testid={testid}>
 
-  
+
     <Content>
 
       <ImageWrapper>
@@ -150,6 +150,19 @@ const ProjectItem = ({ node, style, testid }) =>{
          <div style={{display:'flex',flexDirection:'column'}}>
           <p> Seit diesem Jahr haben wir unser Restaurant in Bacharach eröffnet.</p>
           <p> Wir bemühen uns, allen Ansprüchen unserer Kunden gerecht zu werden.</p>
+
+         </div>
+           :
+           null
+        }
+        {
+           node.fields.slug ==="/kritik" ?
+
+         <div style={{display:'flex',flexDirection:'column'}}>
+        
+          <p> Schreiben Sie einfach eine eigene Restaurantkritik</p>
+          <p> Nach Prüfung auf abwegige (nicht kritische) Inhalte wird diese publiziert.</p>
+
 
          </div>
            :

@@ -59,7 +59,7 @@ results
 
 # Bundle stats
 bundle-stats.json
-
+.env
 .env.development
 .env.production
 

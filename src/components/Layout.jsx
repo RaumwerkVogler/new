@@ -82,6 +82,7 @@ return(
       </DatenContext.Consumer>
 
       {children}
+
       <Footer />
     </>
   </ThemeProvider>

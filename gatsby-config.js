@@ -1,5 +1,5 @@
 const config = require('./config/website')
-
+require('dotenv').config()
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {
@@ -17,6 +17,20 @@ module.exports = {
         path: `${__dirname}/content/projects`,
       },
     },
+    {
+    resolve: `gatsby-source-airtable`,
+    options: {
+      apiKey: process.env.AIRTABLE_API_KEY, // may instead specify via env, see below
+      tables: [
+        {
+          baseId: "appo8R5bkBQwzbmrE",
+          tableName: `Kritik`,
+
+          // can leave off queryName, mapping or tableLinks if not needed
+        }
+      ]
+    }
+  },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
