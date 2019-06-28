@@ -1,4 +1,3 @@
-
 import React,{useState} from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
@@ -11,6 +10,7 @@ import theme from '../../config/theme'
 import reset from '../styles/reset'
 import styled from 'styled-components'
 import DatenContext from '../context/DatenContext'
+
 import {Link} from 'gatsby'
 
 
