@@ -20,6 +20,7 @@ const Content = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
+min-height:400px;
 
   a {
     color: #fff;
@@ -49,6 +50,7 @@ const Content = styled.div`
 const ImageWrapper = styled.div`
   > div {
     height: 100%;
+
     left: 0;
     position: absolute !important;
     top: 0;
@@ -159,7 +161,7 @@ const ProjectItem = ({ node, style, testid }) =>{
            node.fields.slug ==="/kritik" ?
 
          <div style={{display:'flex',flexDirection:'column'}}>
-        
+
           <p> Schreiben Sie einfach eine eigene Restaurantkritik</p>
           <p> Nach Prüfung auf abwegige (nicht kritische) Inhalte wird diese publiziert.</p>
 
@@ -171,7 +173,7 @@ const ProjectItem = ({ node, style, testid }) =>{
 
         <TracedGlow src={node.frontmatter.cover.childImageSharp.fluid.tracedSVG} alt="" />
         <Overlay style={{ backgroundColor: node.frontmatter.color }} />
-
+   -> mehr Informationen
       </Link>
 
     </Content>
