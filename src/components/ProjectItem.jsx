@@ -20,7 +20,7 @@ const Content = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-min-height:400px;
+
 
   a {
     color: #fff;
@@ -58,6 +58,7 @@ const ImageWrapper = styled.div`
 
     > div {
       position: static !important;
+
     }
   }
 `
@@ -65,6 +66,7 @@ const ImageWrapper = styled.div`
 const Overlay = styled.div`
   background-color: ${props => props.theme.brand.primary};
   height: 100%;
+
   left: 0;
   position: absolute;
   top: 0;
@@ -76,6 +78,7 @@ const TracedGlow = styled.img`
   position: absolute;
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   top: 0;
   left: 0;
@@ -109,7 +112,7 @@ const ProjectItem = ({ node, style, testid }) =>{
         {
            node.fields.slug ==="/speisen" ?
            <div>
-           <p>Mediterrane Fischgerichte, Steaks, Grillspezialitäten, Tapas und mehr ...</p>
+           <p>Mediterrane Speisen ...</p>
            <p>Immer frisch zubereitet nach original spanischen Rezepten.</p>
            </div>
            :
@@ -129,8 +132,8 @@ const ProjectItem = ({ node, style, testid }) =>{
            node.fields.slug ==="/cocktails" ?
 
          <div style={{display:'flex',flexDirection:'column'}}>
-          <p> Dank 20jähriger Erfahrung in der Gastronmie haben wir wunderbare Cocktails kreiert.</p>
-          <p> Wir bereiten aber auch Cocktails zu ganz nach Ihren Wünschen.</p>
+          <p> ... auch ohne Alkohol</p>
+
 
          </div>
            :
@@ -140,7 +143,7 @@ const ProjectItem = ({ node, style, testid }) =>{
            node.fields.slug ==="/fleisch" ?
 
          <div style={{display:'flex',flexDirection:'column'}}>
-          <p> Wir bereiten nur Fleisch von übderdurchschnittlicher Qualität zu.</p>
+          <p> Wir bereiten nur Fleisch von überdurchschnittlicher Qualität zu.</p>
 
          </div>
            :
@@ -150,7 +153,7 @@ const ProjectItem = ({ node, style, testid }) =>{
            node.fields.slug ==="/wir" ?
 
          <div style={{display:'flex',flexDirection:'column'}}>
-          <p> Seit diesem Jahr haben wir unser Restaurant in Bacharach eröffnet.</p>
+
           <p> Wir bemühen uns, allen Ansprüchen unserer Kunden gerecht zu werden.</p>
 
          </div>
@@ -162,8 +165,8 @@ const ProjectItem = ({ node, style, testid }) =>{
 
          <div style={{display:'flex',flexDirection:'column'}}>
 
-          <p> Schreiben Sie einfach eine eigene Restaurantkritik</p>
-          <p> Nach Prüfung auf abwegige (nicht kritische) Inhalte wird diese publiziert.</p>
+          <p> Restaurantkritik verfassen?<br/>Nach Prüfung auf abwegige (nicht kritische) Inhalte wird diese publiziert.</p>
+          
 
 
          </div>
