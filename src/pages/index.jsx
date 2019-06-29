@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import { useTrail } from 'react-spring'
 import styled from 'styled-components'
 import { Layout, ProjectItem } from '../components'
-
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 
 const ListWrapper = styled.div`
@@ -33,16 +33,19 @@ const Index = ({
   return (
     <Layout pathname={location.pathname}>
 
-      <ListWrapper>
+      <Grid GatsbyImageSharpFluid_withWebp>
+      <Row>
         {trail.map((style, index) => (
+          <Col xs={6} md={3}>
           <ProjectItem
             testid={`projectItem-${index}`}
             style={style}
             key={projectEdges[index].fields.slug}
             node={projectEdges[index]}
           />
-        ))}
-      </ListWrapper>
+        </Col>))}
+        </Row>
+      </Grid>
     </Layout>
   )
 }

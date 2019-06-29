@@ -14,9 +14,11 @@ const Wrapper = styled.footer`
 
 const Footer = () => (
   <Wrapper data-testid="footer">
-    Website made by Rene Broich. Bacharach.<br/>
-    Kontakt: renbroi@icloud.com <br/>
+    Luz de Mar, 55422 Bacharach, Langstr. 18<br/>
 
+  Tel: 06743-9090718 <br/>
+  Mobil: 0152-18981398<br/>
+  Email: luzdemar.info@gmail.com<br/>
   </Wrapper>
 )
 

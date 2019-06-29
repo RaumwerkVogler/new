@@ -23,6 +23,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.0.21",
     "@mdx-js/react": "^1.0.21",
+    "autoprefixer": "^9.6.0",
     "babel-plugin-styled-components": "^1.10.1",
     "core-js": "^3.1.4",
     "dotenv": "^8.0.0",
@@ -50,6 +51,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-flexbox-grid": "^2.1.2",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
     "react-spring": "^8.0.25",
