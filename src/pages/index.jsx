@@ -1,6 +1,6 @@
 /* eslint react/display-name: 0 */
-import 'core-js'
-import 'regenerator-runtime/runtime'
+//import 'core-js'
+//import 'regenerator-runtime/runtime'
 import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
