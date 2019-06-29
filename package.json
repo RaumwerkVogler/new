@@ -21,6 +21,7 @@
     "test:e2e:ci": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run:ci"
   },
   "dependencies": {
+    "@babel/runtime": "^7.4.5",
     "@mdx-js/mdx": "^1.0.21",
     "@mdx-js/react": "^1.0.21",
     "autoprefixer": "^9.6.0",
@@ -77,6 +78,7 @@
   "license": "MIT",
   "main": "n/a",
   "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
     "babel-eslint": "^10.0.2",
     "cross-env": "^5.2.0",
     "cypress": "^3.3.1",
