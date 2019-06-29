@@ -33,10 +33,10 @@ const Index = ({
   return (
     <Layout pathname={location.pathname}>
 
-      <Grid GatsbyImageSharpFluid_withWebp>
+      <Grid fluid>
       <Row>
         {trail.map((style, index) => (
-          <Col xs={6} md={3}>
+          <Col key={index} xs={12} md={3}>
           <ProjectItem
             testid={`projectItem-${index}`}
             style={style}

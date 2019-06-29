@@ -3,8 +3,17 @@
     [
       "@babel/preset-env",
       {
-        "useBuiltIns": "entry"
+        "useBuiltIns": "usage"
       }
     ]
   ]
 }
+
+{
+  presets: [
+    [
+      "@babel/env", // or others like "@vue/app"
+      {
+        "useBuiltIns": "usage",
+        "corejs": "core-js@2",
+        // ...

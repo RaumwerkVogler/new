@@ -12,8 +12,17 @@ const Item = styled(animated.div)`
     display: block;
     padding-top: 100%;
   }
-`
 
+`
+const Zeig = styled.div`
+display:flex;
+padding-top:25px;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+ width:100%;
+`
 const Content = styled.div`
   height: 100%;
   left: 0;
@@ -21,7 +30,10 @@ const Content = styled.div`
   top: 0;
   width: 100%;
 
+  > p {
+    opacity:1;
 
+  }
   a {
     color: #fff;
     height: 100%;
@@ -107,94 +119,82 @@ const ProjectItem = ({ node, style, testid }) =>{
         <Img fluid={node.frontmatter.cover.childImageSharp.fluid} />
 
       </ImageWrapper>
+      <p style={{position:'relative',top:0,margin:0,background:`${node.frontmatter.color}`,zIndex:4000,color:'white',padding:'10px'}}>{node.frontmatter.title}</p>
       <Link to={node.fields.slug}>
-        <h1 style={{fontWeight:400,fontSize:'1rem'}}>{node.frontmatter.title}</h1>
+        <h1 style={{fontWeight:400,fontSize:'1rem'}}>&nbsp;</h1>
         {
            node.fields.slug ==="/speisen" ?
-           <div>
-           <p>Mediterrane Speisen ...</p>
-           <p>Immer frisch zubereitet nach original spanischen Rezepten.</p>
-           </div>
+           <Zeig>
+           <p>Mediterrane Speisen ...<br/>Immer frisch zubereitet nach original spanischen Rezepten.</p>
+
+           </Zeig>
            :
            null
         }
         {
            node.fields.slug ==="/lage" ?
 
-         <div style={{display:'flex',flexDirection:'column'}}>
+         <Zeig>
           <p> Eingang zum Restaurant auf der Stadtmauer</p>
 
-         </div>
+         </Zeig>
            :
            null
         }
         {
            node.fields.slug ==="/cocktails" ?
 
-         <div style={{display:'flex',flexDirection:'column'}}>
+         <Zeig>
           <p> ... auch ohne Alkohol</p>
 
 
-         </div>
+         </Zeig>
            :
            null
         }
         {
            node.fields.slug ==="/fleisch" ?
 
-         <div style={{display:'flex',flexDirection:'column'}}>
+         <Zeig>
           <p> Wir bereiten nur Fleisch von überdurchschnittlicher Qualität zu.</p>
 
-         </div>
+         </Zeig>
            :
            null
         }
         {
            node.fields.slug ==="/wir" ?
 
-         <div style={{display:'flex',flexDirection:'column'}}>
+         <Zeig>
 
           <p> Wir bemühen uns, allen Ansprüchen unserer Kunden gerecht zu werden.</p>
 
-         </div>
+         </Zeig>
            :
            null
         }
         {
            node.fields.slug ==="/kritik" ?
 
-         <div style={{display:'flex',flexDirection:'column'}}>
+         <Zeig>
 
-          <p> Restaurantkritik verfassen?<br/>Nach Prüfung auf abwegige (nicht kritische) Inhalte wird diese publiziert.</p>
+          <p> Restaurantkritik verfassen?<br/>Lob und Kritik gleichermaßen willkommen.</p>
 
 
 
-         </div>
+         </Zeig>
            :
            null
         }
         {
            node.fields.slug ==="/tisch" ?
 
-         <div style={{display:'flex',flexDirection:'column'}}>
+          <Zeig>
 
-          <p>Gerne reservieren wir für Sie einen Tisch. Bitte dafür alle notwendigen Daten eingeben </p>
-          
-
-         </div>
-           :
-           null
-        }
-        {
-           node.fields.slug ==="/veranstaltung" ?
-
-         <div style={{display:'flex',flexDirection:'column'}}>
-
-          <p>Gegen die nachsommerliche Depressionswelle kämpfen wir
-          mit einigen Veranstaltungen </p>
+          <p>Gerne reservieren wir für Sie einen Tisch. Bitte dafür alle notwendigen Daten eingebem </p>
 
 
-         </div>
+         </Zeig>
            :
            null
         }
