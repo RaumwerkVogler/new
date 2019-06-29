@@ -1,1 +1,10 @@
-useBuiltIns: 'usage'
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
+      }
+    ]
+  ]
+}
