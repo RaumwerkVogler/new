@@ -75,7 +75,7 @@ const Project = ({ data: { mdx: postNode }, location }) => {
         </BGImage>
         <Content type="text">
           <Title data-testid="project-title" style={titleProps}>
-            <h1 style={{fontWeight:100,fontSize:'1.5rem',letterSpacing:'.7rem'}}>{project.title}</h1>
+            <p style={{fontWeight:100,fontSize:'1.5rem',letterSpacing:'.7rem'}}>{project.title}</p>
           </Title>
           </Content>
       </Hero>

@@ -5,22 +5,70 @@ import { animated } from 'react-spring'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
+
+const Hinweisen= ({mslug}) => {
+switch (mslug) {
+  case "/speisen":
+  return(
+    <div>
+    <p>Mediterrane Speisen nach spanischer Art. <br/>Immer frisch zubereitet...</p>
+    </div>
+  )
+    break;
+          case "/lage":
+          return(
+            <div>
+            <p>Eingang auf der schönen historischen Stadtmauer von Bacharach</p>
+            </div>
+          )
+      break;
+          case "/kritik":
+          return(
+            <p>Restaurantkritik verfassen?<br/>Lob und Kritik gleichermaßen willkommen.</p>
+           )
+        break;
+            case "/wir":
+            return(
+              <p> Wir bemühen uns, allen Ansprüchen unserer Kunden gerecht zu werden.</p>
+             )
+        break;
+            case "/tisch":
+            return(
+              <p>Gerne reservieren wir für Sie einen Tisch. Bitte dafür alle notwendigen Daten eingebem </p>
+             )
+              break;
+          case "/speisen":
+              return(
+                <p>Wir bereiten nur Lebensmittel von bester Qualität zu.</p>)
+                break;
+          case "/cocktails":
+                    return(
+                      <p>Leckere Cocktails mit und ohne Alkohol</p>)
+                      break;
+          case "/veranstaltung":
+                      return(
+                       <p>Veranstaltung ab September, wenn der Tourismusandrang nachlässt.</p>)
+                      break;
+  default:
+
+}
+return null
+}
+
 const Item = styled(animated.div)`
   position: relative;
   &:before {
     content: '';
     display: block;
     padding-top: 100%;
+    opacity:0;
   }
 
 `
 const Zeig = styled.div`
-display:flex;
-padding-top:25px;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
+margin-top:50px;
+overflow:scroll;
+height:250px;
  width:100%;
 `
 const Content = styled.div`
@@ -119,89 +167,13 @@ const ProjectItem = ({ node, style, testid }) =>{
         <Img fluid={node.frontmatter.cover.childImageSharp.fluid} />
 
       </ImageWrapper>
-      <p style={{position:'relative',top:0,margin:0,background:`${node.frontmatter.color}`,zIndex:4000,color:'white',padding:'10px'}}>{node.frontmatter.title}</p>
+      <p style={{position:'relative',fontSize:'1rem',fontWeight:100,op:0,margin:0,background:`${node.frontmatter.color}`,zIndex:4000,color:'white',padding:'15px'}}><Link style={{fontSize:'1rem',padding:'5px 5px',opacity:1,color:'black',backgroundColor:'rgba(255,255,255,.6)'}} to={node.fields.slug}>  &rarr; {node.frontmatter.title}</Link></p>
       <Link to={node.fields.slug}>
-        <h1 style={{fontWeight:400,fontSize:'1rem'}}>&nbsp;</h1>
-        {
-           node.fields.slug ==="/speisen" ?
            <Zeig>
-           <p>Mediterrane Speisen ...<br/>Immer frisch zubereitet nach original spanischen Rezepten.</p>
-
+            <Hinweisen mslug={node.fields.slug} />
            </Zeig>
-           :
-           null
-        }
-        {
-           node.fields.slug ==="/lage" ?
-
-         <Zeig>
-          <p> Eingang zum Restaurant auf der Stadtmauer</p>
-
-         </Zeig>
-           :
-           null
-        }
-        {
-           node.fields.slug ==="/cocktails" ?
-
-         <Zeig>
-          <p> ... auch ohne Alkohol</p>
-
-
-         </Zeig>
-           :
-           null
-        }
-        {
-           node.fields.slug ==="/fleisch" ?
-
-         <Zeig>
-          <p> Wir bereiten nur Fleisch von überdurchschnittlicher Qualität zu.</p>
-
-         </Zeig>
-           :
-           null
-        }
-        {
-           node.fields.slug ==="/wir" ?
-
-         <Zeig>
-
-          <p> Wir bemühen uns, allen Ansprüchen unserer Kunden gerecht zu werden.</p>
-
-         </Zeig>
-           :
-           null
-        }
-        {
-           node.fields.slug ==="/kritik" ?
-
-         <Zeig>
-
-          <p> Restaurantkritik verfassen?<br/>Lob und Kritik gleichermaßen willkommen.</p>
-
-
-
-         </Zeig>
-           :
-           null
-        }
-        {
-           node.fields.slug ==="/tisch" ?
-
-          <Zeig>
-
-          <p>Gerne reservieren wir für Sie einen Tisch. Bitte dafür alle notwendigen Daten eingebem </p>
-
-
-         </Zeig>
-           :
-           null
-        }
-
         <TracedGlow src={node.frontmatter.cover.childImageSharp.fluid.tracedSVG} alt="" />
         <Overlay style={{ backgroundColor: node.frontmatter.color }} />
-   -> mehr Informationen
       </Link>
 
     </Content>
