@@ -5,21 +5,121 @@ import { animated } from 'react-spring'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
+const Item = styled(animated.div)`
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  opacity:0;
+  }
+
+`
+const Zeig = styled.div`
+
+overflow:scroll;
+ width:100%;
+height:100%;
+ margin:0;
+ padding:0;
+`
+const Content = styled.div`
+overflow:scroll;
+
+height:100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  > p {
+    opacity:1;
+
+  }
+  a {
+    color: #fff;
+    height: 100%;
+    left: 0;
+
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+  opacity: 0;
+    &:hover {
+      color: #fff;
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+  h2 {
+    margin-top: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+`
+
+const ImageWrapper = styled.div`
+  > div {
+height:100%;
+
+    left: 0;
+    position: absolute !important;
+    top: 0;
+    width: 100%;
+
+    > div {
+      position: static !important;
+
+    }
+  }
+`
+
+const Overlay = styled.div`
+  background-color: ${props => props.theme.brand.primary};
+height:40%;
+
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+`
+
+const TracedGlow = styled.img`
+  position: absolute;
+  width: 100%;
+
+
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.08;
+  filter: invert(100%);
+  z-index: -1;
+`
+
+
 
 const Hinweisen= ({mslug}) => {
 switch (mslug) {
   case "/speisen":
   return(
-    <div>
+
     <p>Mediterrane Speisen nach spanischer Art. <br/>Immer frisch zubereitet...</p>
-    </div>
+
   )
     break;
           case "/lage":
           return(
-            <div>
+
             <p>Eingang auf der schönen historischen Stadtmauer von Bacharach</p>
-            </div>
+
           )
       break;
           case "/kritik":
@@ -49,110 +149,12 @@ switch (mslug) {
                       return(
                        <p>Veranstaltung ab September, wenn der Tourismusandrang nachlässt.</p>)
                       break;
-  default:
+  default:null
 
 }
 return null
 }
 
-const Item = styled(animated.div)`
-  position: relative;
-  &:before {
-    content: '';
-    display: block;
-    padding-top: 100%;
-    opacity:0;
-  }
-
-`
-const Zeig = styled.div`
-margin-top:50px;
-overflow:scroll;
-height:250px;
- width:100%;
-`
-const Content = styled.div`
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-
-  > p {
-    opacity:1;
-
-  }
-  a {
-    color: #fff;
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    padding: 2rem;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    transition: all 0.3s ease-in-out;
-    text-decoration: none;
-
-    &:hover {
-      color: #fff;
-      opacity: 1;
-      text-decoration: none;
-    }
-  }
-  h2 {
-    margin-top: 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-`
-
-const ImageWrapper = styled.div`
-  > div {
-    height: 100%;
-
-    left: 0;
-    position: absolute !important;
-    top: 0;
-    width: 100%;
-
-    > div {
-      position: static !important;
-
-    }
-  }
-`
-
-const Overlay = styled.div`
-  background-color: ${props => props.theme.brand.primary};
-  height: 100%;
-
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -2;
-`
-
-const TracedGlow = styled.img`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.08;
-  filter: invert(100%);
-  z-index: -1;
-`
-
-const Service = styled.div`
-  opacity: 0.8;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-`
 
 const ProjectItem = ({ node, style, testid }) =>{
 
@@ -169,9 +171,9 @@ const ProjectItem = ({ node, style, testid }) =>{
       </ImageWrapper>
       <p style={{position:'relative',fontSize:'1rem',fontWeight:100,op:0,margin:0,background:`${node.frontmatter.color}`,zIndex:4000,color:'white',padding:'15px'}}><Link style={{fontSize:'1rem',padding:'5px 5px',opacity:1,color:'black',backgroundColor:'rgba(255,255,255,.6)'}} to={node.fields.slug}>  &rarr; {node.frontmatter.title}</Link></p>
       <Link to={node.fields.slug}>
-           <Zeig>
+
             <Hinweisen mslug={node.fields.slug} />
-           </Zeig>
+
         <TracedGlow src={node.frontmatter.cover.childImageSharp.fluid.tracedSVG} alt="" />
         <Overlay style={{ backgroundColor: node.frontmatter.color }} />
       </Link>

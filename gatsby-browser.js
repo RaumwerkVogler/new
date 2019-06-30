@@ -9,6 +9,9 @@ import './src/styles/global.css'
 const components = {
  h2: props =>(
   <h2 style={{color:'hotpink',fontSize:'1.2rem'}} {...props} />
+),
+p: props =>(
+ <p style={{color:'black',fontSize:'.9rem'}} {...props} />
 )
 }
 export const wrapRootElement = ({ element }) => {

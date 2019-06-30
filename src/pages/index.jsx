@@ -36,7 +36,7 @@ const Index = ({
       <Grid fluid>
       <Row>
         {trail.map((style, index) => (
-          <Col key={index} xs={12} md={3}>
+          <Col key={index} xs={12} sm={6}  lg={4}>
           <ProjectItem
             testid={`projectItem-${index}`}
             style={style}
