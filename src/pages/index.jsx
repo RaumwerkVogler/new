@@ -25,18 +25,19 @@ const Index = ({
   },
   location,
 }) => {
-  const trail = useTrail(projectEdges.length, {
-    from: { height: '0%' },
-    to: { height: '100%' },
-  })
 
+  const trail=projectEdges
+  // const trail = useTrail(projectEdges.length, {
+  //   from: { height: '0%' },
+  //   to: { height: '100%' },
+  // })
   return (
     <Layout pathname={location.pathname}>
 
       <Grid fluid>
       <Row>
         {trail.map((style, index) => (
-          <Col key={index} xs={12} sm={6}  lg={4}>
+          <Col key={index} xs={12} sm={6} md={4} lg={3}>
           <ProjectItem
             testid={`projectItem-${index}`}
             style={style}

@@ -12,6 +12,9 @@ const components = {
 ),
 p: props =>(
  <p style={{color:'black',fontSize:'.9rem'}} {...props} />
+),
+li: props =>(
+ <li style={{fontStyle:'italc',fontSize:'.9rem'}} {...props} />
 )
 }
 export const wrapRootElement = ({ element }) => {
