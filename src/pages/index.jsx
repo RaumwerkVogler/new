@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import { useTrail } from 'react-spring'
 import styled from 'styled-components'
 import { Layout, ProjectItem } from '../components'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid'
 
 
 const ListWrapper = styled.div`
@@ -24,13 +24,12 @@ const Index = ({
     allMdx: { nodes: projectEdges },
   },
   location,
+  props
 }) => {
-
-  const trail=projectEdges
-  // const trail = useTrail(projectEdges.length, {
-  //   from: { height: '0%' },
-  //   to: { height: '100%' },
-  // })
+  const trail = useTrail(projectEdges.length, {
+    from: { height: '0%' },
+    to: { height: '100%' },
+  })
   return (
     <Layout pathname={location.pathname}>
 
